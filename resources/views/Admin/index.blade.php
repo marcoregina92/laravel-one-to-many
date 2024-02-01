@@ -16,8 +16,7 @@
         <h1>{{ $portfolios_item->title }}</h1>
         <p>{{ $portfolios_item->description }}</p>
         <img src="{{ $portfolios_item->thumb }}" alt="">
-        <a href="{{ route('admin.portfolios.edit', $portfolios_item['id']) }}">MODIFICA</a>
-        {{-- <a href="{{ route('admin.portfolios.destroy', $portfolios_item['id']) }}">ELIMINA</a> --}}
+        <button> <a href="{{ route('admin.portfolios.edit', $portfolios_item['id']) }}">MODIFICA</a></button>
         <form action="{{ route('admin.portfolios.destroy', $portfolios_item['id']) }}" method="POST">
             @csrf
             @method('DELETE')

@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::table("portfolios", function (Blueprint $table) {
 
-            $table->unsignedBigInteger("type_id")->nullable()->after("id");
+            // $table->unsignedBigInteger("types_id")->nullable()->after("id");
 
-            $table->foreign("type_id")->references("id")->on("types")->nullOnDelete();
-
-            // $table->foreignId("type_id")->nullable->costrained()->nullOnDelete();    --->   VERSIONE COMPATTA
+            // $table->foreign("types_id")->references("id")->on("types")->nullOnDelete();
+            $table->foreignId('type_id')->nullable()->after("id")->constrained()->nullOnDelete();
+            // $table->foreignId("type_id")->nullable()->after()->constrained()->nullOnDelete();
         });
     }
 
@@ -27,8 +27,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table("portfolios", function (Blueprint $table) {
-            $table->dropForeign("portfolios_category_id_foreign");
-            $table->dropForeign("portfolios_id");
+            $table->dropForeign("portfolios_type_id_foreign");
+            $table->dropColumn("type_id");
         });
     }
 };

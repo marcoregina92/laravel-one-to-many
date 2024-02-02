@@ -7,9 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Portfolio extends Model
 {
+
+    use HasFactory;
+
     protected $fillable = [
         "title",
         "description",
         "thumb"
     ];
+
+    public function type() {
+        return $this->belongsTo(Type::class);
+    }
 }

@@ -23,7 +23,9 @@ class PortfolioSeeder extends Seeder
             [
                 "title" => "Portfolio di Fabrizio",
                 "description" => "Porfolio magnifico di Fabrizio",
-                "thumb" => "https://s.tmimgcdn.com/scr/1200x750/339200/portfolio-di-architettura-portfolio-design-modello-portfolio-interni_339244-original.jpg"
+                "thumb" => "https://s.tmimgcdn.com/scr/1200x750/339200/portfolio-di-architettura-portfolio-design-modello-portfolio-interni_339244-original.jpg",
+                "type_id" => 3
+
             ]
         ];
 
@@ -33,15 +35,5 @@ class PortfolioSeeder extends Seeder
             $newPortfolio->save();
 
         }
-
-
-        
-        // for($i=0; $i<sizeof($portfolios); $i++){
-        //     $new_portfolio = new Portfolio();
-        //     $new_portfolio->title = $portfolios[$i]["title"];
-        //     $new_portfolio->description = $portfolios[$i]["description"];
-        //     $new_portfolio->thumb = $portfolios[$i]["thumb"];
-        //     $new_portfolio->save();
-        // }
     }
 }

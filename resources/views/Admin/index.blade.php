@@ -15,6 +15,7 @@
     @foreach ($portfolios as $portfolios_item)
         <h1>{{ $portfolios_item->title }}</h1>
         <p>{{ $portfolios_item->description }}</p>
+        <p>{{ $portfolios_item->type->title }}</p>
         <img src="{{ $portfolios_item->thumb }}" alt="">
         <button> <a href="{{ route('admin.portfolios.edit', $portfolios_item['id']) }}">MODIFICA</a></button>
         <form action="{{ route('admin.portfolios.destroy', $portfolios_item['id']) }}" method="POST">
